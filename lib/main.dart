@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:project/Screens/client_info.dart';
+import 'package:project/Screens/job_details.dart';
+import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
-//import './size_config.dart';
-import './pop_up.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AppLauncher());
+}
+
+class AppLauncher extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyApp(),
+    );
+  }
 }
 
 class MyApp extends StatefulWidget {
@@ -17,7 +27,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    //SizeConfig().init(context);
-    return PopUp();
+    //return PopUp();
+    //return JobDetails();
+    return ClientInfo();
   }
 }
