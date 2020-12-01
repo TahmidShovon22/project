@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/Widgets/rating_bar_indicator.dart';
 import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
 import '../Widgets/default_button.dart';
@@ -95,62 +96,18 @@ class _JobDetailsState extends State<JobDetails> {
                               ],
                             ),
                           ),
-                          Row(
-                            children: [
-                              Container(
-                                height: getProportionateScreenHeight(40),
-                                alignment: Alignment.centerLeft,
-                                margin: EdgeInsets.only(
-                                  left: 20,
-                                  bottom: 10,
-                                  right: 10,
-                                ),
-                                child: Text(
-                                  '${widget.rated}',
-                                  style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontFamily: 'Poppins',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: getProportionateScreenHeight(40),
-                                alignment: Alignment.centerLeft,
-                                margin: EdgeInsets.only(
-                                  bottom: 10,
-                                  right: 20,
-                                ),
-                                child: RatingBarIndicator(
-                                  itemSize: 25,
-                                  textDirection: TextDirection.ltr,
-                                  rating: widget.rated,
-                                  direction: Axis.horizontal,
-                                  itemCount: 5,
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: getProportionateScreenHeight(40),
-                                alignment: Alignment.centerLeft,
-                                margin: EdgeInsets.only(
-                                  bottom: 10,
-                                  right: 10,
-                                ),
-                                child: Text(
-                                  '${widget.reviews} Reviews',
-                                  style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontFamily: 'Poppins',
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
-                            ],
+                          Container(
+                            height: getProportionateScreenHeight(40),
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Container(
+                              margin: EdgeInsets.only(left: 20),
+                              child: RatingBarIndicatorWidget(
+                                  widget.rated, widget.reviews),
+                            ),
                           ),
                         ],
                       ),

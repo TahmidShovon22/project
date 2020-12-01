@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './constants.dart';
-import './Widgets/default_button.dart';
+import '../constants.dart';
+import '../Widgets/default_button.dart';
 
 class PopUp extends StatefulWidget {
   final address = 'Farmgate, Dhaka, Bangladesh, Asia, Earth';
@@ -17,11 +17,10 @@ class PopUp extends StatefulWidget {
 class _PopUpState extends State<PopUp> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 480,
-      width: 340,
-      child: Directionality(
-        textDirection: TextDirection.ltr,
+    return Material(
+      child: SizedBox(
+        height: 480,
+        width: 340,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
