@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 
 class ClientInfo extends StatefulWidget {
   final address = 'Farmgate, Dhaka, Bangladesh, Asia, Earth';
-  final name = 'Tahmid Anam';
+  final name = 'Donald Trump';
   final status = 'Online';
   final rated = 3.5;
   final reviews = 15;

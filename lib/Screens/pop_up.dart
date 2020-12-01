@@ -3,8 +3,8 @@ import '../constants.dart';
 import '../Widgets/default_button.dart';
 
 class PopUp extends StatefulWidget {
-  final address = 'Farmgate, Dhaka, Bangladesh, Asia, Earth';
-  final name = 'Tahmid Anam';
+  final address = 'Farmgate, Dhaka';
+  final name = 'Donald Trump';
   final status = 'Online';
   final price = 10000.00;
   final category = 'House Cleaning';

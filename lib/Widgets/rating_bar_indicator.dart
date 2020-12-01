@@ -45,7 +45,7 @@ class RatingBarIndicatorWidget extends StatelessWidget {
             itemCount: 5,
             itemBuilder: (context, index) => Icon(
               Icons.star,
-              color: Colors.amber,
+              color: kPrimaryColor,
             ),
           ),
         ),

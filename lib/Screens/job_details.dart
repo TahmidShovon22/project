@@ -3,7 +3,6 @@ import 'package:project/Widgets/rating_bar_indicator.dart';
 import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
 import '../Widgets/default_button.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class JobDetails extends StatefulWidget {
   final rated = 3.5;

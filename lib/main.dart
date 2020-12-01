@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/Screens/client_info.dart';
+import 'package:project/Screens/feedback_card.dart';
+import 'package:project/Screens/invite_card.dart';
 import 'package:project/Screens/job_details.dart';
 import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
@@ -29,6 +31,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     //return PopUp();
     //return JobDetails();
-    return ClientInfo();
+    //return ClientInfo();
+    //return Invite();
+    return FeedbackCard();
   }
 }
