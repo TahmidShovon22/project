@@ -18,7 +18,7 @@ class _PopUpState extends State<PopUp> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 480,
+      height: 440,
       width: 340,
       child: Directionality(
         textDirection: TextDirection.ltr,
@@ -27,13 +27,13 @@ class _PopUpState extends State<PopUp> {
           children: [
             Container(
               color: kPrimaryLightColor,
-              height: 80,
+              height: 70,
               width: 340,
               child: Row(
                 children: [
                   Container(
                     width: 80,
-                    height: 60,
+                    height: 50,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -111,7 +111,7 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: Colors.white,
-              height: 240,
+              height: 220,
               width: 340,
               child: Card(
                 elevation: 0,
@@ -121,7 +121,7 @@ class _PopUpState extends State<PopUp> {
                   children: [
                     Container(
                       width: 320,
-                      height: 70,
+                      height: 60,
                       child: FittedBox(
                         child: Text(
                           'Service Categories: ${widget.category}',
@@ -136,7 +136,7 @@ class _PopUpState extends State<PopUp> {
                     ),
                     Container(
                       width: 320,
-                      height: 35,
+                      height: 30,
                       alignment: Alignment.center,
                       child: Text(
                         '${widget.qstn}',
@@ -211,7 +211,7 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: kPrimaryLightColor,
-              height: 80,
+              height: 70,
               width: 340,
               child: Row(
                 children: [
@@ -239,7 +239,7 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: kPrimaryLightColor,
-              height: 80,
+              height: 70,
               width: 340,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
