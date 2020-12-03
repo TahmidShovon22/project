@@ -23,13 +23,14 @@ class _ClientInfoState extends State<ClientInfo> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Material(
+    return Container(
+      color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             color: Theme.of(context).primaryColorLight,
-            height: getProportionateScreenHeight(140),
+            height: getProportionateScreenHeight(144.35),
             width: double.infinity,
             child: Row(
               children: [
@@ -107,10 +108,10 @@ class _ClientInfoState extends State<ClientInfo> {
             endIndent: getProportionateScreenWidth(30),
           ),
           Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.all(30),
+            color: Colors.white,
+            padding: EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 0),
             width: double.infinity,
-            height: getProportionateScreenHeight(480),
+            height: getProportionateScreenHeight(580),
             child: Column(
               children: [
                 Text(
@@ -154,16 +155,20 @@ class _ClientInfoState extends State<ClientInfo> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: getProportionateScreenHeight(210),
+                ),
+                Container(
+                  padding:
+                      EdgeInsets.only(bottom: 10, left: 50, right: 50, top: 10),
+                  height: getProportionateScreenHeight(70),
+                  width: double.infinity,
+                  child: DefaultButton(
+                    text: 'CREATE PROPOSAL',
+                    press: () {},
+                  ),
+                ),
               ],
-            ),
-          ),
-          Container(
-            height: getProportionateScreenHeight(100),
-            padding: EdgeInsets.symmetric(vertical: 25, horizontal: 60),
-            width: double.infinity,
-            child: DefaultButton(
-              text: 'CREATE PROPOSAL',
-              press: () {},
             ),
           ),
         ],

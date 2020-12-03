@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project/size_config.dart';
 import '../constants.dart';
 import '../Widgets/default_button.dart';
 
@@ -17,22 +18,25 @@ class PopUp extends StatefulWidget {
 class _PopUpState extends State<PopUp> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SizedBox(
-        height: 480,
-        width: 340,
+    SizeConfig().init(context);
+    return Card(
+      elevation: 10,
+      child: Container(
+        alignment: Alignment.center,
+        height: getProportionateScreenHeight(480),
+        width: getProportionateScreenWidth(340),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               color: kPrimaryLightColor,
-              height: 80,
-              width: 340,
+              height: getProportionateScreenHeight(80),
+              width: getProportionateScreenWidth(340),
               child: Row(
                 children: [
                   Container(
-                    width: 80,
-                    height: 60,
+                    width: getProportionateScreenHeight(80),
+                    height: getProportionateScreenWidth(60),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -46,7 +50,7 @@ class _PopUpState extends State<PopUp> {
                     ),
                   ),
                   SizedBox(
-                    width: 120,
+                    width: getProportionateScreenWidth(120),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -87,12 +91,12 @@ class _PopUpState extends State<PopUp> {
                     color: kTextColor,
                     thickness: 3,
                     width: 0,
-                    indent: 15,
-                    endIndent: 15,
+                    indent: getProportionateScreenHeight(15),
+                    endIndent: getProportionateScreenHeight(15),
                   ),
                   Container(
                     margin: EdgeInsets.all(5),
-                    width: 120,
+                    width: getProportionateScreenWidth(120),
                     child: FittedBox(
                       child: Text(
                         'Price: ${widget.price}',
@@ -110,8 +114,8 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: Colors.white,
-              height: 240,
-              width: 340,
+              height: getProportionateScreenHeight(240),
+              width: getProportionateScreenWidth(340),
               child: Card(
                 elevation: 0,
                 child: Column(
@@ -119,8 +123,8 @@ class _PopUpState extends State<PopUp> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 320,
-                      height: 70,
+                      width: getProportionateScreenWidth(320),
+                      height: getProportionateScreenHeight(70),
                       child: FittedBox(
                         child: Text(
                           'Service Categories: ${widget.category}',
@@ -134,8 +138,8 @@ class _PopUpState extends State<PopUp> {
                       ),
                     ),
                     Container(
-                      width: 320,
-                      height: 35,
+                      width: getProportionateScreenWidth(320),
+                      height: getProportionateScreenHeight(35),
                       alignment: Alignment.center,
                       child: Text(
                         '${widget.qstn}',
@@ -148,8 +152,8 @@ class _PopUpState extends State<PopUp> {
                       ),
                     ),
                     Container(
-                      height: 30,
-                      width: 280,
+                      height: getProportionateScreenHeight(30),
+                      width: getProportionateScreenWidth(280),
                       child: Row(children: [
                         Radio(
                           value: 'One time',
@@ -167,8 +171,8 @@ class _PopUpState extends State<PopUp> {
                       ]),
                     ),
                     Container(
-                      height: 30,
-                      width: 280,
+                      height: getProportionateScreenHeight(30),
+                      width: getProportionateScreenWidth(280),
                       child: Row(children: [
                         Radio(
                           value: 'Weekly',
@@ -186,8 +190,8 @@ class _PopUpState extends State<PopUp> {
                       ]),
                     ),
                     Container(
-                      height: 30,
-                      width: 280,
+                      height: getProportionateScreenHeight(30),
+                      width: getProportionateScreenWidth(280),
                       child: Row(children: [
                         Radio(
                           value: 'Monthly',
@@ -210,12 +214,12 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: kPrimaryLightColor,
-              height: 80,
-              width: 340,
+              height: getProportionateScreenHeight(80),
+              width: getProportionateScreenWidth(340),
               child: Row(
                 children: [
                   Container(
-                    width: 80,
+                    width: getProportionateScreenWidth(80),
                     child: Icon(
                       Icons.location_pin,
                       color: kPrimaryColor,
@@ -223,7 +227,7 @@ class _PopUpState extends State<PopUp> {
                     ),
                   ),
                   Container(
-                    width: 240,
+                    width: getProportionateScreenWidth(240),
                     child: Text(
                       widget.address,
                       style: TextStyle(
@@ -238,8 +242,8 @@ class _PopUpState extends State<PopUp> {
             ),
             Container(
               color: kPrimaryLightColor,
-              height: 80,
-              width: 340,
+              height: getProportionateScreenHeight(80),
+              width: getProportionateScreenWidth(340),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

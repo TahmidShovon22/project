@@ -62,6 +62,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_datetime_picker:
+    dependency: "direct main"
+    description:
+      name: flutter_datetime_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
   flutter_rating_bar:
     dependency: "direct main"
     description:
@@ -114,6 +121,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.2"
+  spinner_input:
+    dependency: "direct main"
+    description:
+      name: spinner_input
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   stack_trace:
     dependency: transitive
     description:

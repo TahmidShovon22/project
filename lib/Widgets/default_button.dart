@@ -13,14 +13,13 @@ class DefaultButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      //width: SizeConfig.screenWidth,
-      //height: SizeConfig.screenHeight / 15,
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         color: kPrimaryColor,
         onPressed: press,
         child: Text(
           text,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
             fontFamily: 'Poppins', //getProportionateScreenWidth(18),
