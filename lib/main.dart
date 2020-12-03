@@ -6,6 +6,7 @@ import 'package:project/Screens/invite_card.dart';
 import 'package:project/Screens/job_details.dart';
 import 'package:project/Screens/job_details_post.dart';
 import 'package:project/Screens/pop_up.dart';
+import 'package:project/Screens/proposals.dart';
 import 'package:project/Screens/submit_proposal.dart';
 import 'package:project/constants.dart';
 import 'package:project/size_config.dart';
@@ -54,7 +55,8 @@ class _MyAppState extends State<MyApp> {
             //PopUp(),
             //Filter(),
             //SubmitProposal(),
-            Booking(),
+            //Booking(),
+            Proposal(),
       ),
     );
   }

@@ -25,9 +25,10 @@ dependencies:
     sdk: flutter
   flutter_rating_bar: ^3.2.0+1
   intl: ^0.16.1
-  
+  carousel_slider: ^2.3.1
   flutter_datetime_picker: ^1.4.0
   spinner_input: ^0.1.2
+  flutter_multi_carousel: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

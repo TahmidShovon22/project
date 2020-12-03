@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class DefaultButton extends StatelessWidget {
+  final double size;
+
   const DefaultButton({
     Key key,
     this.text,
     this.press,
+    this.size,
   }) : super(key: key);
   final String text;
   final Function press;
@@ -21,7 +24,7 @@ class DefaultButton extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: size == 0.0 ? 20 : size,
             fontFamily: 'Poppins', //getProportionateScreenWidth(18),
             color: Colors.white,
           ),
