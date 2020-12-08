@@ -17,160 +17,156 @@ class _JobDetailsState extends State<JobDetails> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      color: Colors.white,
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Job Details'),
+        ),
+        body: Container(
+          color: Colors.white,
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: getProportionateScreenHeight(360),
-                width: double.infinity,
-                child: Container(
-                  color: Theme.of(context).primaryColorLight,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 10, left: 20),
-                        height: getProportionateScreenHeight(40),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Computer Servicing',
-                          style: TextStyle(
-                              color: kTextColor,
-                              fontFamily: 'Poppins',
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 20),
-                        height: getProportionateScreenHeight(40),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Budget - 15000',
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontFamily: 'Poppins',
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 20, right: 20),
-                        height: getProportionateScreenHeight(40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Location - Gulshan 1',
+              Stack(
+                children: [
+                  SizedBox(
+                    height: getProportionateScreenHeight(200),
+                    width: double.infinity,
+                    child: Container(
+                      color: Theme.of(context).primaryColorLight,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 10, left: 20),
+                            height: getProportionateScreenHeight(40),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Computer Servicing',
                               style: TextStyle(
                                   color: kTextColor,
                                   fontFamily: 'Poppins',
-                                  fontSize: 14,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
-                            VerticalDivider(
-                              color: kPrimaryColor,
-                              width: 0,
-                              thickness: 3,
-                              endIndent: 5,
-                              indent: 5,
-                            ),
-                            Text(
-                              'Job type - Contractual',
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            height: getProportionateScreenHeight(40),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Budget - 15000',
                               style: TextStyle(
-                                color: kTextColor,
+                                color: kPrimaryColor,
                                 fontFamily: 'Poppins',
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20, right: 20),
+                            height: getProportionateScreenHeight(40),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Location - Gulshan 1',
+                                  style: TextStyle(
+                                      color: kTextColor,
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                VerticalDivider(
+                                  color: kPrimaryColor,
+                                  width: 0,
+                                  thickness: 3,
+                                  endIndent: 5,
+                                  indent: 5,
+                                ),
+                                Text(
+                                  'Job type - Contractual',
+                                  style: TextStyle(
+                                    color: kTextColor,
+                                    fontFamily: 'Poppins',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: getProportionateScreenHeight(40),
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.only(
+                              bottom: 10,
+                              right: 20,
+                            ),
+                            child: Container(
+                              margin: EdgeInsets.only(left: 20),
+                              child: RatingBarIndicatorWidget(
+                                  widget.rated, widget.reviews),
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        height: getProportionateScreenHeight(40),
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(
-                          bottom: 10,
-                          right: 20,
-                        ),
-                        child: Container(
-                          margin: EdgeInsets.only(left: 20),
-                          child: RatingBarIndicatorWidget(
-                              widget.rated, widget.reviews),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    top: getProportionateScreenHeight(20),
+                    left: getProportionateScreenWidth(280),
+                    child: Container(
+                      width: getProportionateScreenWidth(80),
+                      height: getProportionateScreenHeight(80),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: kTextColor,
+                          width: 3,
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("Assets/Images/dp.jpg"),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(
-                height: getProportionateScreenHeight(180),
+                height: getProportionateScreenHeight(400),
                 width: double.infinity,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(100, 50, 100, 20),
-                  color: Colors.white,
-                  child: Image.asset(
-                    'Assets/Images/pc.png',
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    color: Colors.white,
+                    child: Text(
+                      '${widget.bio}',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
                   ),
                 ),
               ),
-              Positioned(
-                top: getProportionateScreenHeight(140),
-                left: getProportionateScreenWidth(280),
-                child: Container(
-                  width: getProportionateScreenWidth(80),
-                  height: getProportionateScreenHeight(80),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: kTextColor,
-                      width: 3,
-                    ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage("Assets/Images/dp.jpg"),
-                    ),
-                  ),
+              Container(
+                height: getProportionateScreenHeight(120),
+                color: Colors.white,
+                padding: EdgeInsets.symmetric(vertical: 35, horizontal: 60),
+                width: double.infinity,
+                child: DefaultButton(
+                  text: 'CREATE PROPOSAL',
+                  press: () {},
                 ),
-              )
+              ),
             ],
           ),
-          SizedBox(
-            height: getProportionateScreenHeight(240),
-            width: double.infinity,
-            child: SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.all(20),
-                color: Colors.white,
-                child: Text(
-                  '${widget.bio}',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Container(
-            height: getProportionateScreenHeight(120),
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 35, horizontal: 60),
-            width: double.infinity,
-            child: DefaultButton(
-              text: 'CREATE PROPOSAL',
-              press: () {},
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
