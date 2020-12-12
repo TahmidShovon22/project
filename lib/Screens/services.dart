@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:project/Widgets/default_button.dart';
 
 import '../constants.dart';
-import '../size_config.dart';
 
 class Services extends StatefulWidget {
   final name = 'Donald Trump';
@@ -19,18 +18,20 @@ class _ServicesState extends State<Services> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Container(
-          height: constraints.maxHeight,
+          color: Colors.white,
+          height: constraints.maxHeight -
+              MediaQuery.of(context).padding.top -
+              MediaQuery.of(context).padding.bottom,
           width: constraints.maxWidth,
           child: Column(
             children: [
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                height: constraints.maxHeight * 0.08,
+                height: constraints.maxHeight * 0.09,
                 child: Text(
                   'Available Service Categories',
                   style: TextStyle(
@@ -41,7 +42,7 @@ class _ServicesState extends State<Services> {
                 ),
               ),
               Container(
-                height: constraints.maxHeight * 0.22,
+                height: constraints.maxHeight * 0.18,
                 width: constraints.maxWidth,
                 child: Stack(
                   children: [
@@ -57,7 +58,7 @@ class _ServicesState extends State<Services> {
                                 builder: (BuildContext context,
                                     BoxConstraints constraints) {
                                   return Card(
-                                    elevation: 5,
+                                    elevation: 2,
                                     child: Container(
                                       padding:
                                           EdgeInsets.symmetric(horizontal: 5),
@@ -65,7 +66,7 @@ class _ServicesState extends State<Services> {
                                         borderRadius:
                                             BorderRadius.circular(5.0),
                                         border: Border.all(
-                                            color: kTextColor,
+                                            color: Colors.black,
                                             style: BorderStyle.solid,
                                             width: 1),
                                       ),
@@ -78,7 +79,7 @@ class _ServicesState extends State<Services> {
                                             width: constraints.maxWidth * 0.8,
                                             decoration: BoxDecoration(
                                               image: DecorationImage(
-                                                fit: BoxFit.cover,
+                                                fit: BoxFit.contain,
                                                 image: AssetImage(
                                                     "Assets/Images/dp.jpg"),
                                               ),
@@ -141,7 +142,7 @@ class _ServicesState extends State<Services> {
               ),
               Container(
                 padding: EdgeInsets.only(right: 20, top: 10),
-                height: constraints.maxHeight * 0.06,
+                height: constraints.maxHeight * 0.07,
                 alignment: Alignment.centerRight,
                 child: FlatButton(
                   onPressed: () {},
@@ -158,7 +159,7 @@ class _ServicesState extends State<Services> {
               ),
               Container(
                 padding: EdgeInsets.only(left: 20),
-                height: constraints.maxHeight * 0.05,
+                height: constraints.maxHeight * 0.06,
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Recommended Services',
@@ -184,16 +185,9 @@ class _ServicesState extends State<Services> {
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
                         return Card(
-                          elevation: 5,
+                          elevation: 0,
                           child: Container(
                             padding: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                  color: kTextColor,
-                                  style: BorderStyle.solid,
-                                  width: 1),
-                            ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -201,8 +195,8 @@ class _ServicesState extends State<Services> {
                                   height: constraints.maxHeight * 0.60,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: AssetImage("Assets/Images/dp.jpg"),
+                                      fit: BoxFit.contain,
+                                      image: AssetImage("Assets/Images/pc.png"),
                                     ),
                                   ),
                                 ),
@@ -230,7 +224,7 @@ class _ServicesState extends State<Services> {
                 ),
               ),
               Container(
-                height: constraints.maxHeight * 0.11,
+                height: constraints.maxHeight * 0.12,
                 alignment: Alignment.center,
                 child: DefaultButton(
                   text: 'VIEW ALL SERVICES',
