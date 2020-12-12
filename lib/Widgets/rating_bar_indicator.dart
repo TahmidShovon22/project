@@ -7,29 +7,33 @@ import '../size_config.dart';
 class RatingBarIndicatorWidget extends StatelessWidget {
   final rated;
   final reviews;
-  RatingBarIndicatorWidget(this.rated, this.reviews);
+  final showNumber;
+
+  RatingBarIndicatorWidget({this.rated, this.reviews, this.showNumber});
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Row(
       children: [
-        Container(
-          height: getProportionateScreenHeight(40),
-          alignment: Alignment.centerLeft,
-          margin: EdgeInsets.only(
-            bottom: 10,
-            right: 10,
-          ),
-          child: Text(
-            '$rated',
-            style: TextStyle(
-              color: kPrimaryColor,
-              fontFamily: 'Poppins',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+        if (showNumber == true || showNumber == null)
+          Container(
+            height: getProportionateScreenHeight(40),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only(
+              bottom: 10,
+              right: 10,
+            ),
+            child: Text(
+              '$rated',
+              style: TextStyle(
+                color: kPrimaryColor,
+                fontFamily: 'Poppins',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
+        if (showNumber == false) Container(),
         Container(
           height: getProportionateScreenHeight(40),
           alignment: Alignment.centerLeft,
@@ -49,22 +53,23 @@ class RatingBarIndicatorWidget extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          height: getProportionateScreenHeight(40),
-          alignment: Alignment.centerLeft,
-          margin: EdgeInsets.only(
-            bottom: 10,
-            right: 10,
-          ),
-          child: Text(
-            '$reviews Reviews',
-            style: TextStyle(
-              color: kPrimaryColor,
-              fontFamily: 'Poppins',
-              fontSize: 18,
+        if (reviews != null)
+          Container(
+            height: getProportionateScreenHeight(40),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only(
+              bottom: 10,
+              right: 10,
+            ),
+            child: Text(
+              '$reviews Reviews',
+              style: TextStyle(
+                color: kPrimaryColor,
+                fontFamily: 'Poppins',
+                fontSize: 18,
+              ),
             ),
           ),
-        ),
       ],
     );
   }
