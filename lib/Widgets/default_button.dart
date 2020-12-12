@@ -3,12 +3,15 @@ import '../constants.dart';
 
 class DefaultButton extends StatelessWidget {
   final double size;
-
+  final double givenWidth;
+  final double givenHeight;
   const DefaultButton({
     Key key,
     this.text,
     this.press,
     this.size,
+    this.givenWidth,
+    this.givenHeight,
   }) : super(key: key);
   final String text;
   final Function press;
@@ -16,6 +19,8 @@ class DefaultButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      width: givenWidth == 0.0 ? null : givenWidth,
+      height: givenHeight == 0.0 ? null : givenHeight,
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         color: kPrimaryColor,
