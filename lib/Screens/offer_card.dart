@@ -18,127 +18,205 @@ class _OfferCardState extends State<OfferCard> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        return Card(
-          elevation: 5,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            height: constraints.maxHeight * 0.305,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(
-                  color: Colors.black, style: BorderStyle.solid, width: 1),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      width: constraints.maxWidth * 0.32,
-                      height: constraints.maxHeight * 0.15,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.contain,
-                          image: AssetImage("Assets/Images/pc.png"),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: constraints.maxWidth * 0.58,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: 20),
-                            //padding: EdgeInsets.only(top: 10),
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              widget.category,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: kTextColor,
-                                fontFamily: 'Poppins',
-                                fontSize: 18,
+        return Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              height: constraints.maxHeight -
+                  MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom,
+              width: constraints.maxWidth,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: List.generate(
+                    3,
+                    (i) => Container(
+                      height: constraints.maxHeight * 0.32,
+                      child: LayoutBuilder(
+                        builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          return Card(
+                            elevation: 5,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: constraints.maxWidth * 0.01),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.0),
+                                border: Border.all(
+                                    color: Colors.black,
+                                    style: BorderStyle.solid,
+                                    width: 1),
                               ),
-                            ),
-                          ),
-                          IntrinsicHeight(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(top: 20),
-                                  //width: constraints.maxWidth * 0.25,
-                                  child: Text(
-                                    widget.name,
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: kTextColor,
-                                      fontFamily: 'Poppins',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
+                              child: Column(
+                                //mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    height: constraints.maxHeight * 0.70,
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: constraints.maxWidth * 0.35,
+                                          height: constraints.maxHeight * 0.50,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              fit: BoxFit.contain,
+                                              image: AssetImage(
+                                                  "Assets/Images/pc.png"),
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          //alignment: Alignment.bottomLeft,
+                                          width: constraints.maxWidth * 0.55,
+                                          height: constraints.maxHeight * 0.70,
+                                          padding: EdgeInsets.only(
+                                              right:
+                                                  constraints.maxWidth * 0.01,
+                                              left: constraints.maxWidth * 0.01,
+                                              top:
+                                                  constraints.maxHeight * 0.04),
+                                          child: FittedBox(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  height:
+                                                      constraints.maxHeight *
+                                                          0.18,
+                                                  child: FittedBox(
+                                                    child: Text(
+                                                      widget.category,
+                                                      textAlign: TextAlign.left,
+                                                      style: TextStyle(
+                                                        color: kTextColor,
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 18,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height:
+                                                      constraints.maxHeight *
+                                                          0.12,
+                                                  child: IntrinsicHeight(
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Container(
+                                                          child: FittedBox(
+                                                            child: Text(
+                                                              widget.name,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style: TextStyle(
+                                                                color:
+                                                                    kTextColor,
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        VerticalDivider(
+                                                          thickness: 2,
+                                                          color: Colors.black,
+                                                          indent: constraints
+                                                                  .maxHeight *
+                                                              0.01,
+                                                          endIndent: constraints
+                                                                  .maxHeight *
+                                                              0.01,
+                                                        ),
+                                                        Container(
+                                                          child: FittedBox(
+                                                            child: Text(
+                                                              '৳${widget.price}',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style: TextStyle(
+                                                                color:
+                                                                    kTextColor,
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height:
+                                                      constraints.maxHeight *
+                                                          0.35,
+                                                  child: FittedBox(
+                                                    child: Text(
+                                                      '30% Off',
+                                                      style: TextStyle(
+                                                        color: Colors.green,
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 34,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                                VerticalDivider(
-                                  thickness: 2,
-                                  color: Colors.black,
-                                  indent: 20,
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 20),
-                                  //width: constraints.maxWidth * 0.2,
-                                  child: Text(
-                                    '৳${widget.price}',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      color: kTextColor,
-                                      fontFamily: 'Poppins',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
+                                  Container(
+                                    height: constraints.maxHeight * 0.22,
+                                    alignment: Alignment.center,
+                                    child: DefaultButton(
+                                      text: 'VIEW DETAILS',
+                                      press: () {},
+                                      size: 18,
+                                      givenWidth: constraints.maxWidth * 0.9,
+                                      givenHeight: constraints.maxHeight * 0.18,
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            alignment: Alignment.centerLeft,
-                            height: constraints.maxHeight * 0.05,
-                            child: Text(
-                              '30% Off',
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontFamily: 'Poppins',
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
+                                ],
                               ),
                             ),
-                          ),
-                        ],
+                          );
+                        },
                       ),
                     ),
-                  ],
-                ),
-                Container(
-                  height: constraints.maxHeight * 0.10,
-                  alignment: Alignment.center,
-                  child: DefaultButton(
-                    text: 'VIEW DETAILS',
-                    press: () {},
-                    size: 18,
-                    givenWidth: constraints.maxWidth * 0.9,
-                    givenHeight: constraints.maxHeight * 0.05,
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         );
       },
     );
   }
+  /*return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return 
+        );
+      },
+    );*/
 }
